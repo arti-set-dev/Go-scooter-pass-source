@@ -1,0 +1,36 @@
+.footer {
+  padding: 111px 0 128px;
+
+  &__text {
+    display: block;
+
+    &.anim-item {
+      @include scrollAnimItem(0.5, ease, 0.3);
+
+      opacity: 0;
+      transform: translateY(30px);
+
+      &.anim-item--show {
+        opacity: 1;
+        transform: initial;
+      }
+    }
+  }
+
+  &__text,
+  a {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 120%;
+    color: var(--silver);
+
+    @include mobile {
+      font-size: 10px;
+    }
+  }
+
+  @include mobile {
+    padding: 70px 0 128px;
+  }
+}

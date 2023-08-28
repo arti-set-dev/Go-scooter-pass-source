@@ -1,0 +1,20 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "YS Text", sans-serif;
+  --content-width: 915px;
+  --container-offset: 32px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --ui-transition: 0.3s;
+
+  // colors
+  --light-color: #fff;
+  --yellow: #ffde40;
+  --yellow-active: #e5ff00;
+  --btn-shadow: #ffde4096;
+  --dark: #21201f;
+  --gray: #808080;
+  --lilac: #8241ef;
+  --silver: #c5c5c5;
+}

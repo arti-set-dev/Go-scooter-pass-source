@@ -1,0 +1,262 @@
+.bonuses {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  gap: 90px;
+
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__decor {
+    width: 412px;
+    height: 369px;
+
+    &--1 {
+      right: 20%;
+    }
+
+    @include mobile {
+      right: 22%;
+      top: 6%;
+      width: 215px;
+      height: 192px;
+      filter: blur(104px);
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+
+    &.anim-item {
+      @include scrollAnimItem(0.5, ease, 0.3);
+
+      opacity: 0;
+      transform: translateY(20px);
+
+      &.anim-item--show {
+        opacity: 1;
+        transform: initial;
+      }
+    }
+
+    @include small-tablet {
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    &.anim-item {
+      @include scrollAnimItem(0.5, ease, 0.5);
+
+      opacity: 0;
+      transform: translateY(20px);
+
+      &.anim-item--show {
+        opacity: 1;
+        transform: initial;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 433px;
+    gap: 34px;
+
+    @include small-tablet {
+      max-width: 100%;
+    }
+
+    @include mobile {
+      gap: 22px;
+    }
+  }
+
+  &__figure {
+    position: relative;
+
+    &--1 {
+      right: 20px;
+      bottom: 130px;
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    &--2 {
+      left: -60px;
+      bottom: -6px;
+      width: 45%;
+
+      .picture {
+        position: relative;
+        height: 100%;
+
+        &.anim-item {
+          @include scrollAnimItem(0.5, ease, 1.8);
+
+          opacity: 0;
+          transform: scale(0.9);
+
+          &.anim-item--show {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+
+      .image {
+        position: absolute;
+        left: 50%;
+        width: 70%;
+        transform: translateX(-50%);
+
+        @include small-tablet {
+          top: 8%;
+          width: 200px;
+        }
+
+        @include mobile {
+          top: -6%;
+          width: 200px;
+        }
+      }
+
+      @include tablet {
+        left: 0;
+      }
+
+      @include small-tablet {
+        flex-shrink: 0;
+      }
+
+      @include mobile {
+        left: 50%;
+        width: 100%;
+        height: 292px;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__picture-1 {
+    position: relative;
+    right: -76px;
+    top: 104px;
+    transform: scale(1.9);
+
+    &.anim-item {
+      @include scrollAnimItem(0.5, ease, 0.8);
+
+      opacity: 0;
+      transform: scale(1.4);
+
+      &.anim-item--show {
+        opacity: 1;
+        transform: scale(1.9);
+      }
+    }
+
+    @include tablet {
+      right: 0;
+    }
+  }
+
+  &__picture-2 {
+    position: absolute;
+    left: 52px;
+    bottom: 14px;
+    transform: scale(1.1);
+
+    &.anim-item {
+      @include scrollAnimItem(0.5, ease, 1.2);
+
+      opacity: 0;
+      transform: scale(0.9) rotate(30deg);
+
+      &.anim-item--show {
+        opacity: 1;
+        transform: scale(1.1) rotate(0deg);
+      }
+    }
+
+    @include tablet {
+      bottom: 55px;
+      width: 57%;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    width: 423px;
+    height: 423px;
+    transform: translate(-50%, -50%);
+
+    span {
+      font-size: clamp(34px, 5vw, 60px);
+      transform: translate(0, 0) rotate(var(--rot)) translate(0, clamp(-180px, -16vw, -116px));
+
+      @include small-tablet {
+        font-size: 34px;
+        transform: translate(0, 0) rotate(var(--rot)) translate(0, -114px);
+      }
+
+      @include mobile {
+        transform: translate(0, 0) rotate(var(--rot)) translate(0, -121px);
+      }
+    }
+
+    &.anim-item {
+      @include scrollAnimItem(0.5, ease, 1.2);
+
+      opacity: 0;
+      transform: scale(0.9) translate(-50%, -50%);
+
+      &.anim-item--show {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+      }
+    }
+
+    @include small-tablet {
+      width: 270px;
+      height: 270px;
+    }
+  }
+
+  &__btn {
+    &.anim-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease 1.1s, transform 0.5s ease 1.1s, background-color var(--ui-transition) ease;
+
+      &.anim-item--show {
+        opacity: 1;
+        transform: initial;
+      }
+    }
+  }
+
+  @include small-tablet {
+    gap: 40px;
+  }
+
+  @include mobile {
+    padding-top: 58px;
+    gap: 56px;
+  }
+}
